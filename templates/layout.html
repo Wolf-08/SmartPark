@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smartpark</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="/static/css/screen.css" />
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <header class="o-row">
+        <div class="o-container">
+            <div class="c-header">
+                <h1>Sistemas Embebidos</h1>
+                <div class="c-header__logo">
+                    <img src="/static/img/Simbolo.jpg" alt="logoEquipo">
+                    <h1>Smart Park </h1>
+                </div>
+                <div class="c-header__nav">
+                    <nav class="c-nav">
+                        <ul class="o-list c-nav__list">
+                            <li class="c-nav__item is-current"><a href="/" class="c-nav__link">Inicio</a></li>
+                            <li class="c-nav__item"><a href="/acceder" class="c-nav__link">Acceso</a></li>
+                            <li class="c-nav__item"><a href="/parking" class="c-nav__link">Parking</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% block content %}
+    {% endblock %}
+    
+    <aside class="c-mobile-nav">
+        <div class="c-mobile-nav__bg"></div>
+        <div class="c-mobile-nav__body">
+            <div class="c-mobile-nav__header"></div>
+            <div class="c-mobile-nav__nav c-mobile-nav__nav--main"></div>
+            <div class="c-mobile-nav__nav"></div>
+        </div>
+    </aside>
+</body>
+
+</html>
