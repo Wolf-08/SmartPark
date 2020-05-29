@@ -2,8 +2,6 @@ import RPi.GPIO as GPIO
 import sys
 import time
 from threading import Thread
-
-sys.path.append('/home/pi/MFRC522-python')
 from mfrc522 import SimpleMFRC522
 import pigpio
 
@@ -15,16 +13,13 @@ class rfid(Thread):
         self.servoPIN = 17
         GPIO.setmode(GPIO.BCM)
         self.callback = callback
-        # GPIO.setup(servoPIN, GPIO.OUT)
-
+        
         Thread.__init__(self)
         self.deamon = True
         self.conn = mysqlcon
         self.reader = SimpleMFRC522()
 
-        # self.p = GPIO.PWM(servoPIN, 50)
-        # self.p.start(7.5)
-
+        
         self.piGPIO = pigpio.pi()
         self.piGPIO.set_PWM_frequency(self.servoPIN, 50)
         self.piGPIO.set_PWM_dutycycle(self.servoPIN, (7.5/100)*255)
