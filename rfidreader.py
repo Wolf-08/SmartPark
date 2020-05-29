@@ -33,7 +33,7 @@ class rfid(Thread):
 
     def run(self):
         while True:
-            print("Hold a tag near the reader")
+            print("Sostenga la tarjeta cerca del lector")
 
             id, text = self.reader.read()
             print(id)

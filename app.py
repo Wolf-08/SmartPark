@@ -5,7 +5,7 @@ from flask_socketio import SocketIO
 from flask_cors import CORS
 from DP1Database import Database
 import ldr
-#import rfidreader
+import rfidreader
 from LCD import LCD_run
 import  parkingSensor
 import pigpio
@@ -34,7 +34,7 @@ servoPIN = 17
 GPIO.setmode(GPIO.BCM)
 #Accede a los gpio de la rasp
 piGPIO = pigpio.pi()
-
+total = 6
 #Pines y frecuencia 
 #piGPIO.set_PWM_frequency(servoPIN, 50)
 #piGPIO.set_PWM_dutycycle(servoPIN, (7.5 / 100) * 255)
@@ -52,10 +52,12 @@ def parking():
 
 @app.route("/acceder")
 def acceso():
-    return render_template("access.html")
+    return render_template("access.html"
+    ,autos=int(ldr.autos),
+    total=total)
 # refers to the class that works the rfid reader and the automatic barrier
 
 
-#slagboom = rfidreader.rfid(conn, openSlagboom)
+Barrera = rfidreader.rfid(conn, openSlagboom)
 
 app.run(port="80")
