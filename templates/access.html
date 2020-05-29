@@ -16,7 +16,10 @@
                     </a>
                 </div>
                 <h3>Numero de autos en el estacionamiento {{ autos }}</h3>
-                <h5>Lugares Disponibles {{ total-autos }}</h5>
+                {% if autos
+                <=6 %} <h5>Lugares Disponibles {{ total-autos }}</h5>
+                    {% else %}
+                    <h5>Sin lugares por el momento</h5>
             </div>
         </article>
     </div>
